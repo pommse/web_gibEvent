@@ -42,9 +42,9 @@ $(function() {
         }
         $.ajax({
             method: 'POST',
-            url: 'http://ajax.frontend.itheima.net/api/reguser',
+            url: '/api/reguser',
             data,
-            success() {
+            success(res) {
                 if (res.status !== 0) {
                     return layer.msg(res.message)
                 }
@@ -62,7 +62,7 @@ $(function() {
         e.preventDefault()
         $.ajax({
             method: 'POST',
-            url: 'http://ajax.frontend.itheima.net/api/login',
+            url: '/api/login',
             // 快速获取表单中的数据
             data: $(this).serialize(),
             success: function(res) {
